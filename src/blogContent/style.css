@@ -1,0 +1,9 @@
+.blogContainer {
+  font-size: 1.4rem;
+  padding: 50px 500px;
+  color: white;
+  text-align: left;
+}
+.title {
+  color: tomato;
+}

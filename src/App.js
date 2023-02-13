@@ -1,23 +1,49 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Index from "./Navbar/index";
+import Content from "./blogContent/index";
+import { useState, useEffect } from "react";
 
 function App() {
+  let blogsContent = [
+    {
+      key: 1,
+      author: "Kareem",
+      title: "Shaweesh",
+      body: "Nice Nice Nice Nice Nice Nice Nice Nice Nice Nice Nice Nice ",
+    },
+    {
+      key: 2,
+      author: "Bassam",
+      title: "Al-Nabulsi",
+      body: "No No No No No No No No No No No No No No No No No No No No ",
+    },
+    {
+      key: 3,
+      author: "Omar",
+      title: "Bakez",
+      body: "Cool Cool Cool Cool Cool Cool Cool Cool Cool Cool Cool Cool ",
+    },
+    {
+      key: 4,
+      author: "Wa'ad",
+      title: "Al-Awajneh",
+      body: "Ok Ok Ok Ok Ok Ok Ok Ok Ok Ok Ok Ok Ok Ok Ok Ok Ok Ok Ok Ok ",
+    },
+  ];
+  const [loading, setLoading] = useState(true);
+  const [blog, setBlog] = useState([]);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setBlog(blogsContent);
+      setLoading(false);
+    }, 2000);
+  }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Index />
+      <Content blogsContent={blog} loading={loading} />
     </div>
   );
 }

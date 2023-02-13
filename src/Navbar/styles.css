@@ -1,0 +1,40 @@
+body {
+  background-color: black;
+}
+h2 {
+  color: tomato;
+  font-size: 2rem;
+}
+.container {
+  display: flex;
+  background-color: black;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 500px;
+  border-bottom: 2px solid gray;
+}
+.smallerContainer {
+  display: flex;
+  gap: 30px;
+}
+.home {
+  font-size: 1.8rem;
+  color: white;
+}
+.newBlog {
+  font-size: 1.8rem;
+  color: black;
+}
+button {
+  background-color: tomato;
+  border: 1px solid white;
+}
+button:hover {
+  background-color: red;
+}
+a {
+  all: unset;
+}
+a:hover {
+  cursor: pointer;
+}
