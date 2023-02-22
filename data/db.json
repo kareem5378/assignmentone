@@ -1,0 +1,28 @@
+{
+  "blogs": [
+    {
+      "id": 2,
+      "author": "Waad",
+      "title": "Awajneh",
+      "body": "Cool Cool Cool Cool Cool Cool Cool Cool Cool Cool Cool Cool "
+    },
+    {
+      "id": 3,
+      "author": "Bassam",
+      "title": "Al-Nabulsi",
+      "body": "No No No No No No No No No No No No No No No No No No No No "
+    },
+    {
+      "id": 4,
+      "author": "Waad",
+      "title": "Awajneh",
+      "body": "Cool Cool Cool Cool Cool Cool Cool Cool Cool Cool Cool Cool "
+    },
+    {
+      "id": "967b8530-73df-4184-831d-89ddf142808b",
+      "author": "ss",
+      "title": "ss",
+      "body": "ss"
+    }
+  ]
+}

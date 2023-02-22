@@ -1,22 +1,21 @@
 import React from "react";
-import "./styles.css";
+import style from "./styles.module.css";
+import { Link } from "react-router-dom";
 
 function index() {
   return (
     <>
-      <div className="container">
-        <h2>Estarta Blog</h2>
-        <div className="smallerContainer">
-          
-          <a href="/" className="home">
+      <div className={style.container}>
+        <Link className={style.navHome} to={"./"}>
+          <h2>Estarta Blog</h2>
+        </Link>
+        <div className={style.smallerContainer}>
+          <Link className={style.navButton} to={"./"}>
             Home
-          </a>
-
-          <button>
-            <a href="/" className="newBlog">
-              New Blog
-            </a>
-          </button>
+          </Link>
+          <Link className={style.navButton} to={"./NewBlog"}>
+            New Blog
+          </Link>
         </div>
       </div>
     </>

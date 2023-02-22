@@ -1,0 +1,51 @@
+.blogContainer {
+  padding: 50px 500px;
+  width: 50%;
+}
+.blogItem {
+  border: 2px solid black;
+  border-radius: 30px;
+  box-shadow: inset;
+  margin: 30px;
+}
+.title {
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  color: black;
+}
+.check {
+  color: green;
+}
+.unCheck {
+  color: red;
+}
+.author {
+  color: black;
+  font-size: 1.5rem;
+}
+.body {
+  color: black;
+  font-size: 1.3rem;
+}
+a {
+  all: unset;
+}
+h3 {
+  width: fit-content;
+  padding: 10px;
+}
+h3:hover {
+  cursor: pointer;
+  background-color: black;
+  color: white;
+  border-radius: 10px;
+}
+.search {
+  width: 80%;
+  border: 1px black solid;
+  border-radius: 10px;
+  padding: 15px;
+}

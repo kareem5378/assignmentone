@@ -1,0 +1,28 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 400px;
+  border-bottom: 1px solid rgba(220, 220, 220, 0.5);
+}
+h2 {
+  color: black;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+.smallerContainer {
+  display: flex;
+  gap: 30px;
+}
+.navButton {
+  all: unset;
+  cursor: pointer;
+  padding: 10px 0px 0px 0px;
+  font-size: 1.5rem;
+  color: black;
+  padding: 10px;
+  border-radius: 10px;
+}
+.navButton:hover {
+  border: 1px solid rgba(220, 220, 220, 0.8);
+}
