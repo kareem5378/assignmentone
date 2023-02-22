@@ -12,9 +12,10 @@ function BlogContent() {
   const [refresh, setRefresh] = useState(true);
   const [newData, setNewData] = useState(null);
   const [dataToEdit, setDataToEdit] = useState([]);
-  const { data: blogs, loading } = useFetch("http://localhost:8000/Blogs", [
-    refresh,
-  ]);
+  const { data: blogs, loading } = useFetch(
+    "http://localhost:8000/Blogs",
+    refresh
+  );
   function close(blog_id) {
     setDataToEdit((prev) => {
       let retArray = prev?.filter((id) => id !== blog_id);
@@ -59,7 +60,7 @@ function BlogContent() {
                     <h3>{blog?.title}</h3>
                   </Link>
                   <RiEdit2Line
-                    size={22}
+                    size={25}
                     onClick={() => {
                       setDataToEdit((prev) => [...prev, blog?.id]);
                       setTitle(blog?.title);
@@ -77,15 +78,17 @@ function BlogContent() {
                   }}
                 />
                 <AiOutlineCheck
+                  size={25}
                   onClick={() => {
+                    setNewData({ ...blog, title: title });
                     close(blog?.id);
                   }}
                   className={style.check}
                 />
                 <AiOutlineClose
+                  size={25}
                   id="close"
                   onClick={() => {
-                    setNewData({ ...blog, title: title });
                     close(blog?.id);
                   }}
                   className={style.unCheck}
