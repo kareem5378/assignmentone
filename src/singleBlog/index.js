@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import useFetch from "../customHooks/useFetch";
 import { useNavigate } from "react-router-dom";
 import style from "./styles.module.css";
+import { Helmet } from "react-helmet";
 
 function SingleBlog() {
   const back = useNavigate();
@@ -24,6 +25,10 @@ function SingleBlog() {
   }
   return (
     <div className={style.singleBlogContainer}>
+      <Helmet>
+        <title>Single blogs!</title>
+        <link rel="canonical" href="http://mysite.com/example" />
+      </Helmet>
       <div className={style.title}>Title : {blog?.title}</div>
       <div className={style.author}> Author : {blog?.author}</div>
       <div className={style.body}>{blog?.body}</div>

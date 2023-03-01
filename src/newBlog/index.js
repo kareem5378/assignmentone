@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import style from "./styles.module.css";
 import { useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 function NewBlog() {
   const back = useNavigate();
@@ -26,6 +27,10 @@ function NewBlog() {
   }
   return (
     <>
+      <Helmet>
+        <title>Create new blog!</title>
+        <link rel="canonical" href="http://mysite.com/example" />
+      </Helmet>
       <h2 className={style.titleAdd}>Add a New Blog</h2>
       <form onSubmit={handleSubmit}>
         <div className={style.newBlogContainer}>
@@ -55,9 +60,7 @@ function NewBlog() {
             name="author"
             className={style.newBlogInput}
           />
-          <button type="submit">
-            Add blog
-          </button>
+          <button type="submit">Add blog</button>
         </div>
       </form>
     </>
