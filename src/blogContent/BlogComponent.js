@@ -5,7 +5,7 @@ import { AiOutlineClose } from "react-icons/ai";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import style from "./styles.module.css";
-// <BlogComponent blog={blog} key={blog.id} />
+
 function BlogComponent({ blog }) {
   const [title, setTitle] = useState("");
   const [newData, setNewData] = useState(null);
@@ -40,7 +40,6 @@ function BlogComponent({ blog }) {
     <div>
       <div key={blog?.id} className={style.blogItem}>
         {!dataToEdit?.includes(blog?.id) ? (
-          //
           <div>
             <span className={style.title}>
               <Link to={`/SingleBlog/${blog?.id}`}>
@@ -54,7 +53,7 @@ function BlogComponent({ blog }) {
                 }}
               />
             </span>
-          </div> //
+          </div>
         ) : (
           <span>
             <input

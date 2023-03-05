@@ -20,8 +20,6 @@ function BlogContent() {
     }
     return () => {};
   }, []);
-
-  //////////////////////////////////////////////////
   async function getData() {
     try {
       dispatch({
@@ -50,7 +48,6 @@ function BlogContent() {
   if (error) {
     return <h3 className={style.loading}>Error fetching data!</h3>;
   }
-  //////////////////////////////////////////////////
 
   return (
     <div className={style.blogContainer}>

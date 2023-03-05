@@ -1,7 +1,6 @@
 import { lazy, Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
-// import SingleBlog from "./singleBlog";
 
 const Nav = lazy(() => import("./Navbar/index"));
 const Content = lazy(() => import("./blogContent/index"));
@@ -26,32 +25,3 @@ function App() {
 }
 
 export default App;
-
-// import "./App.css";
-// import { useSelector, useDispatch } from "react-redux";
-// import { increment, decrement } from "./reducers/counterSlice";
-// function App() {
-//   const count = useSelector((state) => state.counter.value);
-//   const dispatch = useDispatch();
-//   return (
-//     <div>
-//       <h2>React Js Redux Store with Slice State Examle</h2>
-//       <p>{count}</p>
-//       <button
-//         onClick={() => {
-//           dispatch(increment());
-//         }}
-//       >
-//         Increment
-//       </button>
-//       <button
-//         onClick={() => {
-//           dispatch(decrement());
-//         }}
-//       >
-//         Decrement
-//       </button>
-//     </div>
-//   );
-// }
-// export default App;
