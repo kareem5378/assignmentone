@@ -1,23 +1,57 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
-import useFetch from "../customHooks/useFetch";
 import { useNavigate } from "react-router-dom";
 import style from "./styles.module.css";
 import { Helmet } from "react-helmet";
+import { useDispatch, useSelector } from "react-redux";
 
 function SingleBlog() {
   const back = useNavigate();
   const { id } = useParams();
-  const {
-    data: blog,
-    error,
-    loading,
-  } = useFetch(`http://localhost:8000/blogs/${id}`);
+
+  const dispatch = useDispatch();
+  const { loading, activeBlog: blog, error } = useSelector((state) => state);
+
+  useEffect(() => {
+    async function getData() {
+      try {
+        dispatch({
+          type: "LOADING",
+          payload: loading,
+        });
+
+        const response = await fetch(`http://localhost:8000/Blogs/${id}`);
+        const data = await response.json();
+        if (data) {
+          dispatch({
+            type: "FETCH_SINGLE",
+            payload: data,
+          });
+        }
+      } catch (error) {
+        dispatch({
+          type: "ERROR",
+          payload: error,
+        });
+      }
+    }
+    getData();
+    if (error) {
+      return <h3 className={style.loading}>Error fetching data!</h3>;
+    }
+
+    return () => {
+      dispatch({
+        type: "CLEAN",
+      });
+    };
+  }, []);
   async function handleClick() {
     try {
       const response = await fetch(`http://localhost:8000/blogs/${id}`, {
         method: "DELETE",
       });
+      console.log(response);
       back("/");
     } catch (error) {
       console.log(error);
@@ -27,7 +61,6 @@ function SingleBlog() {
     <div className={style.singleBlogContainer}>
       <Helmet>
         <title>Single blogs!</title>
-        <link rel="canonical" href="http://mysite.com/example" />
       </Helmet>
       <div className={style.title}>Title : {blog?.title}</div>
       <div className={style.author}> Author : {blog?.author}</div>

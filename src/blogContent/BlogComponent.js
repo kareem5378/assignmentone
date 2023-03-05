@@ -5,7 +5,7 @@ import { AiOutlineClose } from "react-icons/ai";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import style from "./styles.module.css";
-
+// <BlogComponent blog={blog} key={blog.id} />
 function BlogComponent({ blog }) {
   const [title, setTitle] = useState("");
   const [newData, setNewData] = useState(null);

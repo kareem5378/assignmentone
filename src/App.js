@@ -1,6 +1,7 @@
 import { lazy, Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
+// import SingleBlog from "./singleBlog";
 
 const Nav = lazy(() => import("./Navbar/index"));
 const Content = lazy(() => import("./blogContent/index"));

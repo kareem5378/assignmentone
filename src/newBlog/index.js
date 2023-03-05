@@ -29,7 +29,6 @@ function NewBlog() {
     <>
       <Helmet>
         <title>Create new blog!</title>
-        <link rel="canonical" href="http://mysite.com/example" />
       </Helmet>
       <h2 className={style.titleAdd}>Add a New Blog</h2>
       <form onSubmit={handleSubmit}>
